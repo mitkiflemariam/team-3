@@ -76,6 +76,7 @@ function print_question(question, choices, answer, questionNumber = 1) {
 }
 
 function load_question(event) {
+  event.preventDefault();
   let selectedValue = select.options[select.selectedIndex].value;
 
   store.forEach((element, index) => {
