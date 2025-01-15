@@ -27,7 +27,7 @@
   flex-direction: column;
   align-items: center;
   width: 40%;
-  height: 430px;
+  height: 480px;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -42,7 +42,7 @@
   flex-direction: column;
   color: beige;
   background-color: black;
-  height: 200px;
+  height: 150px;
   width: 99%;
   bottom: 0;
 }
