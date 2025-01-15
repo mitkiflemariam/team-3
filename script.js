@@ -38,7 +38,9 @@ function displayQuestion() {
     li.appendChild(lb);
     ol.appendChild(li);
   });
+
   item.parentElement.insertBefore(item, ol);
+
   // Clear input fields
   question.value = "";
   choice1.value = "";
