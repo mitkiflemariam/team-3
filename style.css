@@ -16,6 +16,9 @@
   background-color: blue;
   border: 2px solid blue;
 }
+li {
+  list-style-type: none;
+}
 .content {
   display: flex;
   justify-content: center;

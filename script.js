@@ -7,6 +7,7 @@ let choice1 = document.getElementById("choice1");
 let choice2 = document.getElementById("choice2");
 let choice3 = document.getElementById("choice3");
 let choice4 = document.getElementById("choice4");
+let answer = document.getElementById("answer");
 
 let item = document.querySelector(".display_question");
 // let ol = document.querySelector(".options");
@@ -40,12 +41,18 @@ function load_checkBox() {
   });
 }
 
+let click_count = 0;
 select.addEventListener("click", function (event) {
-  load_question(event);
+  if (click_count == 0) {
+    click_count++;
+  } else if (click_count == 1) {
+    load_question(event);
+    click_count = 0;
+  }
 });
 
 function print_question(question, choices, answer, questionNumber = 1) {
-  console.log("Choices:", choices);
+  // console.log("Choices:", choices);
 
   // Ensure choices is an array
   if (!Array.isArray(choices)) {
@@ -99,7 +106,8 @@ function displayQuestion() {
 
   que.textContent = "Q1)  " + val;
   item.appendChild(que);
-
+  let ans = answer.value;
+  answer.textContent = ans;
   choices = [choice1.value, choice2.value, choice3.value, choice4.value];
 
   choices.forEach((element) => {
@@ -115,12 +123,14 @@ function displayQuestion() {
     li.appendChild(lb);
     ol.appendChild(li);
   });
+
   item.appendChild(ol);
+  item.appendChild(answer);
   // item.parentElement.insertBefore(item, ol);
   q = {
     question: val,
     choice: choices,
-    answer: "",
+    answer: ans,
   };
 
   store.push(q);
