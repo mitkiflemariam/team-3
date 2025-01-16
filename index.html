@@ -76,20 +76,36 @@
             <!-- <ol class="options"></ol> -->
           </div>
         </div>
-        <div class="ask">
-          <h2>Question to be asked</h2>
-          <label for="questions">Select one question</label>
-          <div class="next">
-            <button id="next">Next</button>
+
+        <div class="notification">
+          <div class="ask">
+            <h2>Question to be asked</h2>
+            <label for="questions">Select one question</label>
+            <div class="next">
+              <button id="next">Next</button>
+            </div>
+            <select
+              name="select-question"
+              id="select-question"
+              onchange="load_question();"
+            >
+              <!-- <option value="">--Please choose an option--</option> -->
+            </select>
+            <div class="print-question"></div>
           </div>
-          <select
-            name="select-question"
-            id="select-question"
-            onchange="load_question();"
-          >
-            <!-- <option value="">--Please choose an option--</option> -->
-          </select>
-          <div class="print-question"></div>
+          <div style="align-items: center">
+            <img
+              id="flashingImage"
+              src="images/right.png"
+              alt="Flashing Image"
+            />
+
+            <img
+              id="flashingWrongImage"
+              src="images/wrong.png"
+              alt="Flashing Image"
+            />
+          </div>
         </div>
       </div>
 
