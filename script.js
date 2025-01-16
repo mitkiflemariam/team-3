@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
   load_checkBox();
 });
 
+let select = document.getElementById("select-question");
+
 let question = document.getElementById("question");
 let choice1 = document.getElementById("choice1");
 let choice2 = document.getElementById("choice2");
@@ -29,10 +31,8 @@ let store = [
   },
 ];
 
-let select = document.getElementById("select-question");
-
 function load_checkBox() {
-  select.innerHTML = "";
+  select.innerHTML = "<option>Select one</option>";
   store.forEach((element) => {
     let opt = document.createElement("option");
     opt.innerHTML = element["question"];
@@ -41,31 +41,30 @@ function load_checkBox() {
   });
 }
 
-let click_count = 0;
-select.addEventListener("click", function (event) {
-  if (click_count == 0) {
-    click_count++;
-  } else if (click_count == 1) {
-    load_question(event);
-    click_count = 0;
-  }
-});
+// let click_count = 0;
+// select.addEventListener("click", function (event) {
+//   if (click_count == 0) {
+//     click_count++;
+//   } else if (click_count == 1) {
+//     load_question(event);
+//     click_count = 0;
+//   }
+// });
+
+const print_item = document.querySelector(".print-question");
 
 function print_question(question, choices, answer, questionNumber = 1) {
-  // console.log("Choices:", choices);
-
   // Ensure choices is an array
   if (!Array.isArray(choices)) {
     console.error("Choices must be an array. Received:", choices);
     return;
   }
 
-  const item = document.querySelector(".print-question");
   const ol = document.createElement("ol");
 
   let que = document.createElement("h2");
   que.textContent = `Q${questionNumber}) ${question}`;
-  item.appendChild(que);
+  print_item.appendChild(que);
 
   choices.forEach((choice) => {
     let li = document.createElement("li");
@@ -79,11 +78,10 @@ function print_question(question, choices, answer, questionNumber = 1) {
     ol.appendChild(li);
   });
 
-  item.appendChild(ol);
+  print_item.appendChild(ol);
 }
 
-function load_question(event) {
-  event.preventDefault();
+function load_question() {
   let selectedValue = select.options[select.selectedIndex].value;
 
   store.forEach((element, index) => {
@@ -94,6 +92,7 @@ function load_question(event) {
         element["answer"],
         index + 1
       );
+      select[select.selectedIndex].remove();
     }
   });
 }
@@ -107,7 +106,7 @@ function displayQuestion() {
   que.textContent = "Q1)  " + val;
   item.appendChild(que);
   let ans = answer.value;
-  answer.textContent = ans;
+  // answer.textContent = ans;
   choices = [choice1.value, choice2.value, choice3.value, choice4.value];
 
   choices.forEach((element) => {
@@ -124,8 +123,11 @@ function displayQuestion() {
     ol.appendChild(li);
   });
 
+  let ansElement = document.createElement("label");
+  ansElement.textContent = `Answer: ${ans}`;
+
   item.appendChild(ol);
-  item.appendChild(answer);
+  item.appendChild(ansElement);
   // item.parentElement.insertBefore(item, ol);
   q = {
     question: val,
@@ -141,4 +143,5 @@ function displayQuestion() {
   choice2.value = "";
   choice3.value = "";
   choice4.value = "";
+  answer.value = "";
 }
