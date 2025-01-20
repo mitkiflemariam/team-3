@@ -75,16 +75,6 @@ store.forEach((element) => {
   select.appendChild(opt);
 });
 
-// let click_count = 0;
-// select.addEventListener("click", function (event) {
-//   if (click_count == 0) {
-//     click_count++;
-//   } else if (click_count == 1) {
-//     load_question(event);
-//     click_count = 0;
-//   }
-// });
-
 function highlightCorrectAnswer(correctAnswer) {
   let correctChoice = correctAnswer.closest("li");
   let allChoices = correctChoice.closest("ol").getElementsByTagName("li");
@@ -122,8 +112,11 @@ function print_question(question, choices, answer, questionNumber = 1) {
   que.textContent = `Q${questionNumber}) ${question}`;
   print_item.appendChild(que);
   let correct_ans = false;
+  let di = document.createElement("div");
   choices.forEach((choice) => {
-    let li = document.createElement("li");
+    // let li = document.createElement("li");
+
+    di.classList.add("div-radio");
     let lb = document.createElement("label");
     let chk = document.createElement("input");
     chk.setAttribute("type", "radio");
@@ -131,27 +124,33 @@ function print_question(question, choices, answer, questionNumber = 1) {
     chk.setAttribute("value", choice);
 
     lb.textContent = choice;
-    li.appendChild(chk);
-    li.appendChild(lb);
-    ol.appendChild(li);
+    // li.appendChild(chk);
+    // li.appendChild(lb);
+    di.appendChild(chk);
+    di.appendChild(lb);
+    // ol.appendChild(li);
   });
 
-  print_item.appendChild(ol);
+  print_item.appendChild(di);
   let submit = document.createElement("button");
   submit.textContent = "submit";
-  print_item.appendChild(submit);
+
+  d = document.createElement("div");
+  d.classList.add("div-button");
+  d.appendChild(submit);
+  print_item.appendChild(d);
   submit.onclick = function () {
     var ele = document.getElementsByName("que_radio");
     for (i = 0; i < ele.length; i++) {
       if (ele[i].checked) {
         if (ele[i].value === found_question["answer"]) {
-          highlightCorrectAnswer(ele[i]);
+          // highlightCorrectAnswer(ele[i]);
           flashing_image("flashingImage");
           var audio = new Audio("audio/correct.mp3");
           audio.play();
           stop_flashing_image("flashingWrongImage");
         } else {
-          highlightWrongAnswer(ele[i]);
+          // highlightWrongAnswer(ele[i]);
           flashing_image("flashingWrongImage");
           var audio = new Audio("audio/wrong.mp3");
           audio.play();
