@@ -14,15 +14,9 @@ let answer = document.getElementById("answer");
 let item = document.querySelector(".display_question");
 // let ol = document.querySelector(".options");
 let ol = document.createElement("ol");
-addBtn = document.getElementById("add_btn");
-
-if (addBtn) {
-  addBtn.addEventListener("click", function () {
-    displayQuestion();
-  });
-} else {
-  console.log("Button with id 'add_btn' not found");
-}
+document.getElementById("add_btn").addEventListener("click", function () {
+  displayQuestion();
+});
 
 let store = [
   {
@@ -37,43 +31,15 @@ let store = [
   },
 ];
 
-// function load_checkBox() {
-//   select.innerHTML = "<option>Select one</option>";
-//   store.forEach((element) => {
-//     let opt = document.createElement("option");
-//     opt.innerHTML = element["question"];
-//     opt.value = element["question"];
-//     select.appendChild(opt);
-//   });
-// }
 function load_checkBox() {
-  const select = document.getElementById("select-question");
-  if (!select) {
-    console.log("Dropdown element not found");
-    return;
-  }
-
-  console.log("Populating dropdown with options...");
   select.innerHTML = "<option>Select one</option>";
-
   store.forEach((element) => {
-    const opt = document.createElement("option");
+    let opt = document.createElement("option");
     opt.innerHTML = element["question"];
     opt.value = element["question"];
     select.appendChild(opt);
   });
 }
-
-// Clear existing options
-select.innerHTML = "<option>Select one</option>";
-
-// Populate dropdown with questions
-store.forEach((element) => {
-  const opt = document.createElement("option");
-  opt.innerHTML = element["question"];
-  opt.value = element["question"];
-  select.appendChild(opt);
-});
 
 // let click_count = 0;
 // select.addEventListener("click", function (event) {
@@ -248,31 +214,8 @@ function flashing_image(selector) {
 
 function stop_flashing_image(selectorOrElement) {
   let image = document.getElementById(selectorOrElement);
+  // clearInterval(image.dataset.flashInterval);
+  // image.style.filter = "none"; // Reset filter to default
+  // delete image.dataset.flashInterval; // Clean up the stored interval ID
   image.style.display = "none";
-}
-
-// var acc = document.getElementsByClassName("accordion");
-
-var acc = document.getElementsByClassName("nav-link");
-var i;
-var count = 0;
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function () {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-      count = count + 1;
-    } else {
-      panel.style.display = "block";
-    }
-    if (count) {
-      this.classList.toggle("in-active");
-      panel.style.display = "none";
-
-      return;
-    }
-  });
 }

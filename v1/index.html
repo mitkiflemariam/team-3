@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Quiz App</h1>
+      </div>
+      <div class="topnav">
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+      </div>
+      <div class="content">
+        <div class="add">
+          <div class="question">
+            <label for="question">Question</label>
+            <input
+              type="text"
+              name="question"
+              id="question"
+              placeholder="what is your question"
+              style="margin-left: 30px"
+            />
+          </div>
+          <br />
+          <div class="choice1">
+            <label for="choice1">Choice one</label>
+            <input
+              type="text"
+              name="choice1"
+              id="choice1"
+              placeholder="put the possible answer"
+              style="margin-left: 20px"
+            />
+          </div>
+          <div class="choice2">
+            <label for="question">Choice two</label>
+            <input
+              type="text"
+              name="choice2"
+              id="choice2"
+              placeholder="put the possible answer"
+              style="margin-left: 20px"
+            />
+          </div>
+          <div class="choice3">
+            <label for="choise3">Choice three</label>
+            <input
+              type="text"
+              name="choice3"
+              id="choice3"
+              placeholder="put the possible answer"
+              style="margin-left: 15px"
+            />
+          </div>
+          <div class="choice4">
+            <label for="choise4">Choice four</label>
+            <input
+              type="text"
+              name="choice4"
+              id="choice4"
+              placeholder="put the possible answer"
+              style="margin-left: 20px"
+            />
+          </div>
+          <br />
+          <div class="answ">
+            <label for="answer">Answer</label>
+            <input
+              type="text"
+              name="answer"
+              id="answer"
+              placeholder="put the correct answer"
+              style="margin-left: 30px"
+            />
+          </div>
+          <br />
+          <button id="add_btn">Add question</button>
+          <br />
+          <div class="display_question">
+            <!-- <ol class="options"></ol> -->
+          </div>
+        </div>
+
+        <div class="notification">
+          <div class="ask">
+            <h2>Question to be asked</h2>
+            <label for="questions">Select one question</label>
+            <div class="next">
+              <button id="next" style="float: right">Next</button>
+            </div>
+            <br />
+            <select
+              name="select-question"
+              id="select-question"
+              onchange="load_question();"
+            >
+              <!-- <option value="">--Please choose an option--</option> -->
+            </select>
+            <div class="print-question"></div>
+          </div>
+          <div class="right-ans" style="align-items: center">
+            <img
+              id="flashingImage"
+              src="images/right.png"
+              alt="Flashing Image"
+            />
+
+            <img
+              id="flashingWrongImage"
+              src="images/wrong.png"
+              alt="Flashing Image"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="contributers"><h1>Contributors</h1></div>
+        <div class="fcontent">
+          <div class="lfooter"><h3>Abdulqadir Sheikh</h3></div>
+          <div class="cfooter"><h3>Mitiku Kiflemariam</h3></div>
+          <div class="rfooter"><h3>Anteneh</h3></div>
+          <div class="rfooter"><h3>Miracle</h3></div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

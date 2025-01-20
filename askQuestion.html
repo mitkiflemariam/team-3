@@ -22,21 +22,19 @@
             <a href="login.html" class="success"
               ><i class="fa fa-fw fa-user"> </i> Login</a
             >
-            <!-- &nbsp;/&nbsp;
+            &nbsp;/&nbsp;
             <a href="index.html" class="success"
               ><i class="fa fa-fw fa-user"></i> Logout</a
-            > -->
+            >
           </div>
         </div>
 
-        <div class="navbar active">
-          <a class="active" href="index.html"
-            ><i class="fa fa-fw fa-home"></i> Home</a
-          >
+        <div class="navbar">
+          <a href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
 
           <a href="#news">News</a>
           <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
-          <div class="dropdown">
+          <div class="dropdown active">
             <button class="dropbtn">
               Our Services
               <i class="fa fa-caret-down"></i>
@@ -60,17 +58,13 @@
               <a href="#">Abdulqadir</a>
             </div>
           </div>
-          <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+          <a href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
         </div>
       </div>
       <div class="item2">
         <ul class="nav">
           <li class="nav-item">
-            <a href="#profile" class="nav-link active">HOME</a>
-            <div id="profile" class="nav-submenu">
-              <a href="#" class="nav-submenu-link">Posts</a>
-              <a href="#" class="nav-submenu-link">Images</a>
-            </div>
+            <a href="index.html" class="nav-link">HOME</a>
           </li>
 
           <li class="nav-item">
@@ -84,10 +78,14 @@
           </li>
           <li class="nav-item">
             <a href="#contact" class="nav-link">CONTACT</a>
+            <!-- <div id="msg" class="nav-submenu">
+              <a href="#" class="nav-submenu-link">New</a>
+              <a href="#" class="nav-submenu-link">Sent</a>
+            </div> -->
           </li>
 
           <li class="nav-item">
-            <a href="#services" class="nav-link">SERVICES</a>
+            <a href="#services" class="nav-link active">SERVICES</a>
             <div id="services" class="nav-submenu">
               <a href="askQuestion.html" class="nav-submenu-link">Take Quiz</a>
               <a href="addQuestion.html" class="nav-submenu-link"
@@ -103,7 +101,41 @@
           </li>
         </ul>
       </div>
-      <div class="item3">Main</div>
+      <div class="item3">
+        <div class="content">
+          <div class="notification">
+            <div class="ask">
+              <h2>Question to be asked</h2>
+              <label for="questions">Select one question</label>
+
+              <br />
+              <div class="select-div">
+                <select
+                  name="select-question"
+                  id="select-question"
+                  onchange="load_question();"
+                >
+                  <!-- <option value="">--Please choose an option--</option> -->
+                </select>
+              </div>
+              <div class="print-question"></div>
+            </div>
+            <div class="right-ans" style="align-items: center">
+              <img
+                id="flashingImage"
+                src="images/right.png"
+                alt="Flashing Image"
+              />
+
+              <img
+                id="flashingWrongImage"
+                src="images/wrong.png"
+                alt="Flashing Image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="item4">Right</div>
 
       <div class="item5">
@@ -118,7 +150,7 @@
         </div>
       </div>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <script
       src="https://kit.fontawesome.com/yourcode.js"
       crossorigin="anonymous"

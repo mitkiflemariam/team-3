@@ -22,21 +22,19 @@
             <a href="login.html" class="success"
               ><i class="fa fa-fw fa-user"> </i> Login</a
             >
-            <!-- &nbsp;/&nbsp;
+            &nbsp;/&nbsp;
             <a href="index.html" class="success"
               ><i class="fa fa-fw fa-user"></i> Logout</a
-            > -->
+            >
           </div>
         </div>
 
-        <div class="navbar active">
-          <a class="active" href="index.html"
-            ><i class="fa fa-fw fa-home"></i> Home</a
-          >
+        <div class="navbar">
+          <a href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
 
           <a href="#news">News</a>
           <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
-          <div class="dropdown">
+          <div class="dropdown active">
             <button class="dropbtn">
               Our Services
               <i class="fa fa-caret-down"></i>
@@ -60,17 +58,13 @@
               <a href="#">Abdulqadir</a>
             </div>
           </div>
-          <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+          <a href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
         </div>
       </div>
       <div class="item2">
         <ul class="nav">
           <li class="nav-item">
-            <a href="#profile" class="nav-link active">HOME</a>
-            <div id="profile" class="nav-submenu">
-              <a href="#" class="nav-submenu-link">Posts</a>
-              <a href="#" class="nav-submenu-link">Images</a>
-            </div>
+            <a href="index.html" class="nav-link">HOME</a>
           </li>
 
           <li class="nav-item">
@@ -87,8 +81,8 @@
           </li>
 
           <li class="nav-item">
-            <a href="#services" class="nav-link">SERVICES</a>
-            <div id="services" class="nav-submenu">
+            <a href="#setting" class="nav-link active">SERVICES</a>
+            <div id="setting" class="nav-submenu">
               <a href="askQuestion.html" class="nav-submenu-link">Take Quiz</a>
               <a href="addQuestion.html" class="nav-submenu-link"
                 >Add Questions</a
@@ -103,7 +97,79 @@
           </li>
         </ul>
       </div>
-      <div class="item3">Main</div>
+      <div class="item3">
+        <h1>Add Questions</h1>
+        <div class="add-content">
+          <div class="add">
+            <div class="question">
+              <label for="question">Question</label>
+              <input
+                type="text"
+                name="question"
+                id="question"
+                placeholder="what is your question"
+                style="margin-left: 30px"
+              />
+            </div>
+            <br />
+            <div class="choice1">
+              <label for="choice1">Choice one</label>
+              <input
+                type="text"
+                name="choice1"
+                id="choice1"
+                placeholder="put the possible answer"
+                style="margin-left: 20px"
+              />
+            </div>
+            <div class="choice2">
+              <label for="question">Choice two</label>
+              <input
+                type="text"
+                name="choice2"
+                id="choice2"
+                placeholder="put the possible answer"
+                style="margin-left: 20px"
+              />
+            </div>
+            <div class="choice3">
+              <label for="choise3">Choice three</label>
+              <input
+                type="text"
+                name="choice3"
+                id="choice3"
+                placeholder="put the possible answer"
+                style="margin-left: 15px"
+              />
+            </div>
+            <div class="choice4">
+              <label for="choise4">Choice four</label>
+              <input
+                type="text"
+                name="choice4"
+                id="choice4"
+                placeholder="put the possible answer"
+                style="margin-left: 20px"
+              />
+            </div>
+            <br />
+            <div class="answ">
+              <label for="answer">Answer</label>
+              <input
+                type="text"
+                name="answer"
+                id="answer"
+                placeholder="put the correct answer"
+                style="margin-left: 30px"
+              />
+            </div>
+            <br />
+            <button id="add_btn">Add question</button>
+            <br />
+            <!-- <div class="display_question"></div> -->
+          </div>
+        </div>
+      </div>
       <div class="item4">Right</div>
 
       <div class="item5">
