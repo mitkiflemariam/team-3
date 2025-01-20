@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="item1">
+        <div class="head-container">
+          <div class="logo">
+            <img src="images/logo.png" alt="" width="70px" />
+          </div>
+          <div class="title"><h1>Quiz App</h1></div>
+          <div class="loginlogout">
+            <a href="#"><i class="fa fa-fw fa-user"> </i> Login</a> /
+            <a href="#"><i class="fa fa-fw fa-user"></i> Logout</a>
+          </div>
+        </div>
+
+        <!-- <div class="topnav">
+          <a href="#">Link</a>
+          <a href="#">Link</a>
+          <a href="#">Link</a>
+        </div> -->
+        <div class="navbar">
+          <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+
+          <a href="#news">News</a>
+          <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+          <div class="dropdown">
+            <button class="dropbtn">
+              Our Services
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="#">Take Quiz</a>
+              <a href="#">Add Questions</a>
+              <a href="#">Update Questions</a>
+              <a href="#">Delete Questions</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">
+              Contributers
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="#">Mitiku</a>
+              <a href="#">Miracle</a>
+              <a href="#">Anteneh </a>
+              <a href="#">Abdulqadir</a>
+            </div>
+          </div>
+          <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+        </div>
+      </div>
+      <div class="item2">
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="#profile" class="nav-link">HOME</a>
+            <div id="profile" class="nav-submenu">
+              <a href="#" class="nav-submenu-link">Posts</a>
+              <a href="#" class="nav-submenu-link">Images</a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a href="#msg" class="nav-link">CONTRIBUTORS</a>
+            <div id="msg" class="nav-submenu">
+              <a href="#" class="nav-submenu-link">Mitiku</a>
+              <a href="#" class="nav-submenu-link">Miracle</a>
+              <a href="#" class="nav-submenu-link">Anteneh</a>
+              <a href="#" class="nav-submenu-link">Abdulqadir</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">CONTACT</a>
+            <!-- <div id="msg" class="nav-submenu">
+              <a href="#" class="nav-submenu-link">New</a>
+              <a href="#" class="nav-submenu-link">Sent</a>
+            </div> -->
+          </li>
+
+          <li class="nav-item">
+            <a href="#setting" class="nav-link">SERVICES</a>
+            <div id="setting" class="nav-submenu">
+              <a href="#" class="nav-submenu-link">Take Quiz</a>
+              <a href="#" class="nav-submenu-link">Add Questions</a>
+              <a href="#" class="nav-submenu-link">Update Questions</a>
+              <a href="#" class="nav-submenu-link">Delete Questions</a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a href="#exit" class="nav-link">Exit</a>
+          </li>
+        </ul>
+      </div>
+      <div class="item3">
+        Main
+        <div class="content">
+          <!-- <div class="notification">
+            notification -->
+          <div class="ask">
+            <h2>Question to be asked</h2>
+            <label for="questions">Select one question</label>
+
+            <br />
+            <select
+              name="select-question"
+              id="select-question"
+              onchange="load_question();"
+            >
+              <!-- <option value="">--Please choose an option--</option> -->
+            </select>
+            <div class="print-question"></div>
+          </div>
+          <div class="right-ans" style="align-items: center">
+            <img
+              id="flashingImage"
+              src="images/right.png"
+              alt="Flashing Image"
+            />
+
+            <img
+              id="flashingWrongImage"
+              src="images/wrong.png"
+              alt="Flashing Image"
+            />
+          </div>
+          <!-- </div> -->
+        </div>
+      </div>
+      <div class="item4">Right</div>
+
+      <div class="item5">
+        <div class="footer">
+          <div class="contributers"><h1>Contributors</h1></div>
+          <div class="fcontent">
+            <div class="lfooter"><h3>Abdulqadir Sheikh</h3></div>
+            <div class="cfooter"><h3>Mitiku Kiflemariam</h3></div>
+            <div class="rfooter"><h3>Anteneh</h3></div>
+            <div class="rfooter"><h3>Miracle</h3></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/yourcode.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

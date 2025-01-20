@@ -89,6 +89,13 @@ button {
   text-align: center;
 }
 
+.highlight {
+  background-color: #108633;
+}
+.highlight-wrong {
+  background-color: rgb(235, 33, 33);
+}
+
 .notification {
   overflow: scroll;
   /* padding-top: 20px; */

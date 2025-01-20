@@ -51,19 +51,6 @@ function load_checkBox() {
 //   }
 // });
 
-function highlightCorrectAnswer(correctAnswer) {
-  let correctChoice = correctAnswer.closest("li");
-  let allChoices = correctChoice.closest("ol").getElementsByTagName("li");
-  for (let choice of allChoices) {
-    choice.classList.remove("highlight");
-  }
-  correctChoice.classList.add("highlight");
-}
-function highlightWrongAnswer(wrongAnswer) {
-  let wrongChoice = wrongAnswer.closest("li");
-  wrongChoice.classList.add("highlight-wrong");
-}
-
 function find_by_question(question) {
   return store.find((element) => element["question"] == question);
 }
@@ -111,13 +98,11 @@ function print_question(question, choices, answer, questionNumber = 1) {
     for (i = 0; i < ele.length; i++) {
       if (ele[i].checked) {
         if (ele[i].value === found_question["answer"]) {
-          highlightCorrectAnswer(ele[i]);
           flashing_image("flashingImage");
           var audio = new Audio("audio/correct.mp3");
           audio.play();
           stop_flashing_image("flashingWrongImage");
         } else {
-          highlightWrongAnswer(ele[i]);
           flashing_image("flashingWrongImage");
           var audio = new Audio("audio/wrong.mp3");
           audio.play();
@@ -214,8 +199,22 @@ function flashing_image(selector) {
 
 function stop_flashing_image(selectorOrElement) {
   let image = document.getElementById(selectorOrElement);
-  // clearInterval(image.dataset.flashInterval);
-  // image.style.filter = "none"; // Reset filter to default
-  // delete image.dataset.flashInterval; // Clean up the stored interval ID
   image.style.display = "none";
+}
+
+var acc = document.getElementsByClassName("accordion");
+
+var acc = document.getElementsByClassName("nav-link");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function () {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
 }
